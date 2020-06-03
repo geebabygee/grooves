@@ -3,7 +3,14 @@ class DanceLessonsController < ApplicationController
     before_action :set_dance_lesson, only: [:show]
 
     def index
-      @dance_lessons = DanceLesson.all
+      @dance_lessons = DanceLesson.geocoded
+
+          @markers = @dance_lessons.map do |lesson|
+            {
+              lat: lesson.latitude,
+              lng: lesson.longitude
+            }
+      end
     end
 
     def show

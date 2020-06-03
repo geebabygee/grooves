@@ -1,0 +1,28 @@
+<video autoplay muted loop id="myVideo">
+  <source <%=image_tag("dance.mp4")%> type="video/mp4">
+</video>
+
+<div class="content">
+  <h1>GROOVES</h1>
+  <p>Discover your new passion, bring joy into your life and light up your feet. </p>
+</div>
+
+<div class="container">
+    <h2>Dance lessons on offer:</h2>
+    <% @dance_lessons.each do |lesson| %>
+     <div class="card-product">
+      <%= cl_image_tag lesson.photo.key, height: 300, width: 400, crop: :fill%>
+       <div class="card-product-infos">
+         <h2><%= lesson.name %></h2>
+         <p><%= lesson.description %></p>
+         <p><%= lesson.level %></p>
+       </div>
+     </div>
+     <% end %>
+
+</div>
+
+
+
+
+

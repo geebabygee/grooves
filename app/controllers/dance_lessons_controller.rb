@@ -17,7 +17,7 @@ class DanceLessonsController < ApplicationController
     end
 
     def article_params
-      params.require(:dance_lesson).permit(:name, :description, :level)
+      params.require(:dance_lesson).permit(:name, :description, :level, :photo)
     end
 end
 

@@ -1,6 +1,8 @@
 class DanceLessonsController < ApplicationController
 
     before_action :set_dance_lesson, only: [:show]
+    skip_before_action :authenticate_user!, only: :index
+
 
     def index
       @dance_lessons = DanceLesson.geocoded

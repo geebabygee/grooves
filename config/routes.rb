@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'bookings/destroy'
+
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   # root to: 'dance_lessons#index'
-  resources :dance_lessons
-  resources :pages
+  resources :dance_lessons , only: [ :index, :show, :new, :create ] do
+    resources :bookings, only: [ :create ]
+  end
+  resources :pages, only: [:home]
+
 end

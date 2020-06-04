@@ -1,0 +1,7 @@
+
+<%= simple_form_for [@dance_lesson, @booking] do |f| %>
+<%= f.input :date, as: :date, html5: true %>
+<%= f.submit "Buy this dance lesson", class: "btn btn-danger" %>
+<% end %>
+
+

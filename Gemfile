@@ -5,6 +5,7 @@ ruby '2.5.3'
 # gem 'pg'  # No more `gem 'sqlite'` thanks to `--database=postgresql`
 gem 'simple_form'
 gem 'geocoder'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'

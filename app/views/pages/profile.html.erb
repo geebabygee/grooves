@@ -1,33 +1,72 @@
 <div class="container">
-  <h2>My profile</h2>
+  <div class="row">
 
+    <div class="col-6">
+      <% if @user.dance_lessons %>
+      <h3 class="my-4">My advertised dance lessons</h3>
 
-  <% if @user.dance_lessons %>
-  <h3>My advertised dance lessons</h3>
-  <ul>
-    <% @user.dance_lessons.each do |lesson| %>
-    <li>
-      <%= link_to lesson.name, dance_lesson_path(lesson)  %> -  <% if policy(lesson).edit? %>
-      <%= link_to "Edit your dance lesson", edit_dance_lesson_path(lesson) %>
-      <% end %> -  <% if policy(lesson).destroy? %>
-      <%= link_to "Delete your dance lesson", dance_lesson_path(lesson), method: :delete, data: { confirm: "Are you Sure?" } %>
+      <% @user.dance_lessons.each do |lesson| %>
+
+      <div class="d-flex">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url(<%= cl_image_path lesson.photo.key %>)">
+        <%= link_to dance_lesson_path(lesson) do %>
+        <h2><%= lesson.name %></h2>
+      </div>
       <% end %>
-    </li>
-  </ul>
-  <% end %>
-  <% end %>
-  <%= link_to "Add a new dance lesson", new_dance_lesson_path(@dance_lesson)  %>
 
+      <div>
+        <ul class="no-bullets">
+          <% if policy(lesson).edit? %>
+          <li>
+            <%= link_to "Edit your dance lesson", edit_dance_lesson_path(lesson) %>
+            <% end %>
+          </li>
+          <li>
+           <% if policy(lesson).destroy? %>
+           <%= link_to "Delete your dance lesson", dance_lesson_path(lesson), method: :delete, data: { confirm: "Are you Sure?" } %>
+           <% end %>
+         </li>
+         <li>
+          <%= link_to "Add a new dance lesson", new_dance_lesson_path(@dance_lesson)  %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+
+<div class="col-6">
   <% if @user.bookings %>
-  <h3>My booked dance lessons:</h3>
-  <ul>
-    <% @user.bookings.each do |booking| %>
-    <li><%= booking.dance_lesson.name %> - <%= booking.date %>
-    </li>
-    <% end %>
-  </ul>
-  <% end %>
+  <h3 class="my-4">My booked dance lessons</h3>
 
+  <% @user.bookings.each do |booking| %>
+
+  <div class="d-flex">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url(<%= cl_image_path booking.dance_lesson.photo.key %>)">
+    <h2><%= booking.dance_lesson.name %></h2>
+  </div>
+
+  <div>
+    <ul class="no-bullets">
+      <li>
+        <%= booking.dance_lesson.name %> - <%= booking.date %>
+      </li>
+      <li>
+        <%= booking.dance_lesson.address %>
+      </li>
+    </ul>
+  </div>
+</div>
+<% end %>
+<% end %>
 </div>
 
 
+
+
+</div>
+
+</div>

@@ -1,13 +1,14 @@
 class DanceLessonsController < ApplicationController
 
   # Authorize every action!
-  before_action :set_dance_lesson, only: [:show]
+  before_action :set_dance_lesson, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
 
 
   def index
     # @dance_lessons = DanceLesson.geocoded
     @dance_lessons = policy_scope(DanceLesson).geocoded.order(created_at: :desc)
+    # policy_scope calls the resolve method in the dancelessons policy
 
     @markers = @dance_lessons.map do |lesson|
       {
@@ -56,7 +57,7 @@ class DanceLessonsController < ApplicationController
 
   def destroy
     @dance_lesson.destroy
-    redirect_to dance_lessons_path
+    redirect_to root_path
   end
 
 

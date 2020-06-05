@@ -1,15 +1,21 @@
 <h2>My profile</h2>
-<%= render "shared/form" %>
 
-
+<%= link_to "Add a new dance lesson", new_dance_lesson_path(@dance_lesson)  %>
 
 <% if @user.dance_lessons %>
-  <h3>My advertised dance lessons</h3>
-    <ul>
-      <% @user.dance_lessons.each do |lesson| %>
-      <li><%= lesson.name %></li>
-    </ul>
-  <% end %>
+<h3>My advertised dance lessons</h3>
+<ul>
+  <% @user.dance_lessons.each do |lesson| %>
+  <li><%= lesson.name %></li>
+</ul>
+<% if policy(lesson).edit? %>
+<%= link_to "Edit your dance lesson", edit_dance_lesson_path(lesson) %>
 <% end %>
-
+<% if policy(lesson).destroy? %>
+<%= link_to "Delete your dance lesson", dance_lesson_path(lesson), method: :delete, data: { confirm: "Are you Sure?" }, class: "btn btn-danger " %>
+<% end %>
+<% end %>
+<% end %>
 <h3>My booked dance lessons:</h3>
+
+

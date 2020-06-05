@@ -8,4 +8,12 @@ class DanceLessonPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  # def new?  -> new is calling create so don't need both
+  #   return true
+  # end
+
+  def show?
+    true
+  end
 end

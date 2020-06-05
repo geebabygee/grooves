@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # get "user/dashboard", to: "users#dashboard"
   # root to: 'dance_lessons#index'
-  resources :dance_lessons , only: [ :index, :show, :new, :create ] do
+  resources :dance_lessons do
     resources :bookings, only: [ :create ]
   end
 

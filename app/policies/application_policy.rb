@@ -12,9 +12,12 @@ class ApplicationPolicy
 
   def show?
     false
+    # scope.where(:id => record.id).exists? - used to be before??
+
   end
 
   def create?
+    # false
     false
   end
 

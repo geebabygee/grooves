@@ -9,7 +9,7 @@ class PagesController < ApplicationController
         lat: lesson.latitude,
         lng: lesson.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { dance_lesson: lesson }),
-        image_url: helpers.asset_url('shoe.jpeg')
+        image_url: helpers.asset_url('sho.svg')
 
       }
     end

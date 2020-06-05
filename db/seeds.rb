@@ -15,6 +15,7 @@ require "open-uri"
 #   Character.create(name: 'Luke', movie: movies.first)
 DanceLesson.destroy_all
 User.destroy_all
+
 puts "creating"
 
 User.create!({
@@ -45,4 +46,3 @@ lesson3.photo.attach(io:  URI.open('https://expressionplatform.com/wp-content/up
 
 puts "finished seeding"
 
-# address: "Travessa do Oleiro, Lisbon, 1200-341 "

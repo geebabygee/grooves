@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :dance_lessons
   has_many :bookings
   has_many :booked_dance_lessons, through: :bookings, source: :dance_lesson
-
+ # restart server after this!
 end
 
 # class Pet < ActiveRecord::Base

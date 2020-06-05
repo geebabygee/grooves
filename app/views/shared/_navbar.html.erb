@@ -13,7 +13,7 @@
       <% if user_signed_in? %>
 
       <% if policy(DanceLesson).new? %>
-        <li class="nav-item active">
+        <li class="nav-item">
           <%= link_to "Add a dance lesson", new_dance_lesson_path, class: "nav-link" %>
         </li>
       <% end %>

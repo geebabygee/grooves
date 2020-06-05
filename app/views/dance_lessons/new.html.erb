@@ -1,4 +1,12 @@
-<h2>Hi, add a dancing class:</h2>
+<div class="form-background" style="background-image: url(https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60); ">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-6 my-3">
+        <h2>Hi <%= current_user.name %>, add a dancing class:</h2>
+        <%= render 'shared/form'%>
+        <%= link_to 'Back', root_path %>
+      </div>
+    </div>
+  </div>
 
-
-<%= render 'shared/form' %>
+</div>

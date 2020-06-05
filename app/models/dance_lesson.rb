@@ -4,4 +4,5 @@ class DanceLesson < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   has_many :users, through: :bookings
   has_many :bookings
+  belongs_to :user
 end

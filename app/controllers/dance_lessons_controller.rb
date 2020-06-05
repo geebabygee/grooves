@@ -30,9 +30,10 @@ class DanceLessonsController < ApplicationController
   def create
     @dance_lesson = DanceLesson.new(dance_lesson_params)
     @dance_lesson.user = current_user
-    # authorize @venue
+    # authorize @dance_lesson
+
     if @dance_lesson.save
-      redirect_to @dance_lesson
+      redirect_to dance_lessons_path
     else
       render :new
     end
@@ -46,7 +47,7 @@ class DanceLessonsController < ApplicationController
   end
 
   def dance_lesson_params
-    params.require(:dance_lesson).permit(:name, :description, :level, :photo)
+    params.require(:dance_lesson).permit(:name, :description, :level, :photo, :address)
   end
 end
 

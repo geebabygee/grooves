@@ -17,6 +17,7 @@ class PagesController < ApplicationController
 
   def profile
     @dance_lesson = DanceLesson.new
+    @user = current_user
   end
 
 

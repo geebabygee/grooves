@@ -1,2 +1,15 @@
 <h2>My profile</h2>
 <%= render "shared/form" %>
+
+
+
+<% if @user.dance_lessons %>
+  <h3>My advertised dance lessons</h3>
+    <ul>
+      <% @user.dance_lessons.each do |lesson| %>
+      <li><%= lesson.name %></li>
+    </ul>
+  <% end %>
+<% end %>
+
+<h3>My booked dance lessons:</h3>

@@ -5,9 +5,13 @@
   </div>
 </div>
 
-<h2>What's it like?</h2>
+<div class="container m-5">
+  <div class="row">
+    <div class="col-6">
+      <h2>Book a class</h2>
+      <%= render 'shared/bookings_form', dance_lesson: @dance_lesson, booking: @booking %>
+      <%= link_to "Back to all classes", root_path, class: "btn btn-danger my-5" %>
+    </div>
+  </div>
+</div>
 
-
-<h2>Book a class</h2>
-
-<%= render 'shared/bookings_form', dance_lesson: @dance_lesson, booking: @booking %>

@@ -1,15 +1,8 @@
+<%= simple_form_for [@dance_lesson, @booking] do |f| %>
+<%= f.input :date, as: :date, html5: true %>
+<%= f.submit "Book this dance class", class: "btn btn-outline-danger" %>
+<% end %>
 
 
-<div class="container m-5">
-  <div class="row d-flex justify-content-center">
-    <div class="col-6">
-      <%= simple_form_for [@dance_lesson, @booking] do |f| %>
-      <%= f.input :date, as: :date, html5: true %>
-      <%= f.submit "Buy this dance lesson", class: "btn btn-outline-danger" %>
-      <% end %>
-
-    </div>
-  </div>
-</div>
 
 

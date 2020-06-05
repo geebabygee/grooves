@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
-      <% if policy(DanceLesson).create? %>
+      <% if policy(DanceLesson).new? %>
         <li class="nav-item active">
           <%= link_to "Add a dance lesson", new_dance_lesson_path, class: "nav-link" %>
         </li>

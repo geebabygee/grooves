@@ -21,6 +21,7 @@ class DanceLessonPolicy < ApplicationPolicy
 
   def edit?
     user_is_owner?
+    # user_is_owner? || user.admin --> Or when user is admin -> check slides
   end
 
   def update?
@@ -38,5 +39,6 @@ class DanceLessonPolicy < ApplicationPolicy
     # user --> current_user
     # record --> dance_lesson I authorised
     record.user == user
+    # record.user == user || user.admin
   end
 end

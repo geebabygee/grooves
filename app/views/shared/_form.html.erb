@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+    <%= simple_form_for @dance_lesson do |f| %>
+    <%= f.input :name, placeholder:"Bachata"%>
+    <%= f.input :level, placeholder:"Beginner" %>
+    <%= f.input :price, placeholder:"250 €" %>
+    <%= f.input :address, placeholder:"Anjos 70, Lisbon" %>
+    <%= f.input :description, placeholder:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste facilis sint officia harum unde quod nemo et ullam dicta expedita dignissimos debitis esse, ipsum odio similique sunt blanditiis ut. Dolorum." %>
+    <%= f.input :photo, placeholder:"upload dance lesson photo" %>
+    <%= f.submit "Add a dance lesson", class: "btn btn-outline-danger" %>
+    <% end %>
+  <center><%= link_to 'Back', root_path %><center>
+  </div>
+
+    </div>
+
+</div>
+
+

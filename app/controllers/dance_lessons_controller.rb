@@ -22,6 +22,22 @@ class DanceLessonsController < ApplicationController
     @booking = Booking.new
   end
 
+  def new
+    @dance_lesson = DanceLesson.new
+    # authorize @venue
+  end
+
+  def create
+    @dance_lesson = DanceLesson.new(dance_lesson_params)
+    @dance_lesson.user = current_user
+    # authorize @venue
+    if @dance_lesson.save
+      redirect_to @dance_lesson
+    else
+      render :new
+    end
+  end
+
 
   private
 
@@ -29,7 +45,7 @@ class DanceLessonsController < ApplicationController
     @dance_lesson = DanceLesson.find(params[:id])
   end
 
-  def article_params
+  def dance_lesson_params
     params.require(:dance_lesson).permit(:name, :description, :level, :photo)
   end
 end

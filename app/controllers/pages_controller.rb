@@ -14,4 +14,10 @@ class PagesController < ApplicationController
       }
     end
   end
+
+  def profile
+    @dance_lesson = DanceLesson.new
+  end
+
+
 end

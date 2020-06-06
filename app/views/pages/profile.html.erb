@@ -10,6 +10,7 @@
       <% if @user.dance_lessons %>
       <h3 class="my-4">My advertised dance lessons</h3>
 
+          <%= link_to "Add a new dance lesson", new_dance_lesson_path(@dance_lesson), class: "btn btn-outline-danger mb-3"  %>
 
       <% @user.dance_lessons.each do |lesson| %>
 
@@ -33,9 +34,6 @@
            <%= link_to "Delete your dance lesson", dance_lesson_path(lesson), method: :delete, data: { confirm: "Are you Sure?" } %>
            <% end %>
          </li>
-         <li>
-          <%= link_to "Add a new dance lesson", new_dance_lesson_path(@dance_lesson)  %>
-        </li>
       </ul>
     </div>
   </div>

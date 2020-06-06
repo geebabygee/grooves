@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-      redirect_to dance_lessons_path, notice: "your booking is now confirmed"
+      redirect_to profile_path, notice: "your booking is now confirmed"
     else
       # redirect_back fallback_location: root_path, alert: "Could not save this booking"
       render :new

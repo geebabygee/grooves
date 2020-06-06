@@ -1,0 +1,14 @@
+.main-container {
+  display: flex;
+}
+
+#map {
+  height: 100vh;
+  margin-top: 20px;
+  position: sticky;
+  top: 0;
+}
+
+.cards-container {
+  margin: 15px;
+}

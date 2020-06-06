@@ -37,12 +37,16 @@ lesson2 = DanceLesson.create!(name: "Salsa", description: "Salsa is a Latin danc
 lesson2.photo.attach(io: URI.open('https://waytogo.cebupacificair.com/wp-content/uploads/2018/07/salsa-pic-2.jpg'), filename: 'salsa.jpg', content_type: 'image/jpg')
 
 lesson3 = DanceLesson.create!( name: "Bachata", description: "Bachata is a style of social dance from the Dominican Republic which is now danced all over the world. It is connected with bachata music.", level: "Intermediate", address: "Almirante Reis, Lisbon", price: 300, user: User.all.sample)
-lesson3.photo.attach(io:  URI.open('https://expressionplatform.com/wp-content/uploads/2019/07/bachata-daniel_desiree.jpg'), filename: 'salsa.jpg', content_type: 'image/jpg')
+lesson3.photo.attach(io:  URI.open('https://expressionplatform.com/wp-content/uploads/2019/07/bachata-daniel_desiree.jpg'), filename: 'bachata.jpg', content_type: 'image/jpg')
 
-# DanceLesson.create!(name: "Brazilian Zouk", description: "Brazilian Zouk is a partner dance which began in Brazil during the early 1990s. Brazilian Zouk evolved from the partner dance known as the Lambada.", level: "Beginner")
-# DanceLesson.create!(name: "Samba", description: "Samba is a Brazilian music genre and dance style, with its roots in Africa via the West African slave trade and African religious traditions, particularly of Congo, through the samba de roda genre of the northeastern Brazilian state of Bahia, from which it derived ", level: "Beginner")
-# DanceLesson.create!(name: "Kizomba", description: "Kizomba is a genre of dance and a musical genre originating in Angola in 1984.", level: "Intermediate")
-# DanceLesson.create!(name: "Forro", description: "The term forró refers to a musical genre, a rhythm, a dance and the event itself where forró music is played and danced. Forró is an important part of the Northeastern Region of Brazil. ", level: "Beginners")
+lesson4 = DanceLesson.create!( name: "Zouk", description: "Brazilian Zouk is a partner dance which began in Brazil during the early 1990s. Brazilian Zouk evolved from the partner dance known as the Lambada.", level: "Beginner", address: "Avenida da Liberdades, Lisbon", price: 300, user: User.all.sample)
+lesson4.photo.attach(io:  URI.open('https://i.pinimg.com/originals/0b/21/6b/0b216ba06101be2ecaad08c49b025b62.jpg'), filename: 'zouk.jpg', content_type: 'image/jpg')
+
+lesson5 = DanceLesson.create!(name: "Forro", description: "The term forró refers to a musical genre, a rhythm, a dance and the event itself where forró music is played and danced. Forró is an important part of the Northeastern Region of Brazil. ", level: "Beginner" , address: "Anjos 70, Lisbon", price: 300, user: User.all.sample)
+lesson5.photo.attach(io:  URI.open('https://forroistanbul.org/wp-content/uploads/2017/05/14138506_1057184401031631_997839514_n.jpg'), filename: 'forro.jpg', content_type: 'image/jpg')
+
+lesson6 = DanceLesson.create!(name: "Samba", description: "Samba is a Brazilian music genre and dance style, with its roots in Africa via the West African slave trade and African religious traditions, particularly of Congo, through the samba de roda genre of the northeastern Brazilian state of Bahia, from which it derived ", level: "Intermediate", address: "Anjos 70, Lisbon", price: 300, user: User.all.sample)
+lesson6.photo.attach(io:  URI.open('https://cf.ltkcdn.net/dance/images/orig/224774-2120x1414-samba-dancers-performing.jpg'), filename: 'samba.jpg', content_type: 'image/jpg')
 
 puts "finished seeding"
 

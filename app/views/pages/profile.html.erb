@@ -2,8 +2,14 @@
   <div class="row">
 
     <div class="col-6">
+    <% if @user.dance_lessons.empty? %>
+    <h3 class="mt-4">Please add some dance lessons:</h3>
+      <%= link_to "Add a new dance lesson", new_dance_lesson_path(@dance_lesson), class: "btn btn-outline-danger"  %>
+    <% else %>
+
       <% if @user.dance_lessons %>
       <h3 class="my-4">My advertised dance lessons</h3>
+
 
       <% @user.dance_lessons.each do |lesson| %>
 
@@ -35,9 +41,15 @@
   </div>
   <% end %>
   <% end %>
+<% end %>
 </div>
 
+
 <div class="col-6">
+<% if @user.bookings.empty? %>
+<h3 class="mt-4">Please book some dance lessons:</h3>
+  <%= link_to "Back to all dance lessons", root_path, class: "btn btn-outline-danger" %>
+<% else %>
   <% if @user.bookings %>
   <h3 class="my-4">My booked dance lessons</h3>
 
@@ -62,8 +74,8 @@
 </div>
 <% end %>
 <% end %>
+<% end %>
 </div>
-
 
 
 

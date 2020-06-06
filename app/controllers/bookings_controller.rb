@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    # authorize @booking
+    authorize @booking
   end
 
   def create
@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     #@booking = current_user.bookings.build(booking_params) -old formula
     @booking.user = current_user
     @booking.dance_lesson = @dance_lesson
-    # authorize @booking
+    authorize @booking
 
     if @booking.save
       redirect_to dance_lessons_path, notice: "your booking is now confirmed"
@@ -44,6 +44,7 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def booking_params

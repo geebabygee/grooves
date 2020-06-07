@@ -1,0 +1,47 @@
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .video-container {
+    width: 100%;
+  }
+  .cards-container {
+    width: 100%;
+  }
+}
+@media (max-width: 760px) {
+  /* For a screen < 720px, this CSS will be read */
+  .video-container {
+    width: auto;
+  }
+
+  .main-container {
+    display: block !important;
+  }
+
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  #myVideo {
+    display: none;
+  }
+  .video-container {
+    background: url('boogie.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+    .cards-container {
+      width: 350px;
+  }
+
+   .card-product p {
+    display:  none;
+   }
+
+   .card-product img {
+    width: 50%;
+   }
+
+  #map {
+    display: none;
+  }
+
+}

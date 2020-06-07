@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-6">
+    <div class="col-12 col-md-6">
     <% if @user.dance_lessons.empty? %>
     <h3 class="mt-4">Please add some dance lessons:</h3>
       <%= link_to "Add a new dance lesson", new_dance_lesson_path(@dance_lesson), class: "btn btn-outline-danger"  %>
@@ -43,7 +43,7 @@
 </div>
 
 
-<div class="col-6">
+<div class="col-12 col-md-6">
 <% if @user.bookings.empty? %>
 <h3 class="mt-4">Please book some dance lessons:</h3>
   <%= link_to "Back to all dance lessons", root_path, class: "btn btn-outline-danger" %>

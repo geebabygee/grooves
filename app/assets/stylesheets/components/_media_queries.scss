@@ -2,21 +2,21 @@
   /* For a screen < 960px, this CSS will be read */
   .video-container {
     width: 100%;
-    // height: auto;
   }
   .cards-container {
     width: 100%;
   }
 }
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   /* For a screen < 720px, this CSS will be read */
   .video-container {
     width: auto;
-    // height: 100%;
   }
-    .cards-container {
 
+  .main-container {
+    display: block !important;
   }
+
 }
 @media (max-width: 540px) {
   /* For a screen < 540px, this CSS will be read */
@@ -40,5 +40,8 @@
     width: 50%;
    }
 
+  #map {
+    display: none;
+  }
 
 }

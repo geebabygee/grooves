@@ -7,8 +7,16 @@ class DanceLessonsController < ApplicationController
 
   def index
     # @dance_lessons = DanceLesson.geocoded
-    @dance_lessons = policy_scope(DanceLesson).geocoded.order(created_at: :desc)
+    # @dance_lessons = policy_scope(DanceLesson).geocoded.order(created_at: :desc)
     # policy_scope calls the resolve method in the dancelessons policy
+
+    if params[:query].present?
+        sql_query = "name ILIKE :query OR level ILIKE :query OR address ILIKE :query"
+        @dance_lessons = policy_scope(DanceLesson).geocoded.order(created_at: :desc).where(sql_query, query: "%#{params[:query]}%")
+      else
+        @dance_lessons = policy_scope(DanceLesson).geocoded.order(created_at: :desc).all
+    end
+
 
     @markers = @dance_lessons.map do |lesson|
       {

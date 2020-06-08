@@ -1,0 +1,20 @@
+<%= form_tag dance_lessons_path, class: "form-inline row p-4", method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control col",
+    placeholder: "Find a dance class"
+  %>
+  <%= submit_tag "Search", class: "btn btn-danger col-auto ml-3" %>
+<% end %>
+<!-- the list of movies -->
+<!-- <div class="container">
+    <form class="row text-center">
+        <div class="col pr-1">
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-auto px-0">
+            <button type="submit" class="col-auto btn btn-primary"> Go </button>
+        </div>
+    </form>
+</div>
+ -->

@@ -1,5 +1,6 @@
 <div class="main-container">
 <div class="cards-container my-4">
+  <%= render 'shared/search_form' %>
     <% @dance_lessons.each do |lesson| %>
      <div class="card-product">
       <%= cl_image_tag lesson.photo.key, height: 300, width: 400, crop: :fill%>
